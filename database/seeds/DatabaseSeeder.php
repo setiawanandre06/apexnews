@@ -11,7 +11,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(UserSeeder::class);
         factory(\App\User::class, 100)->create();  // Creates 100 fake users for testing
         factory(\App\Post::class, 1500)->create();  // Creates 1500 fake posts for testing
         factory(\App\Category::class, 10)->create();  // Creates 10 fake categories for testing
@@ -24,8 +23,8 @@ class DatabaseSeeder extends Seeder
 
         App\Post::all()->each(function ($post) use ($tags)
         {
-        	$post->tag()->attach(
-        		$tag->random(rand(1, 50))->pluck('id')->toArray()
+        	$post->tags()->attach(
+        		$tags->random(rand(1, 50))->pluck('id')->toArray()
         	);
         });
     }
