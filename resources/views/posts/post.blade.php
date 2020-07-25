@@ -20,7 +20,7 @@
 			@endforeach
 			@foreach ($images as $image)
 			{{-- asset($image->url) --}}
-				<img class="img-thumbnail" src="{{ url($image->url) }}" alt="">
+				<img class="img-thumbnail" src="{{ Storage::url($image->url) }}" alt="">
 			@endforeach
 		</div>
 

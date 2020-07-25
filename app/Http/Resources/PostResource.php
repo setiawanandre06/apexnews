@@ -3,6 +3,10 @@
 namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
+use App\Http\Resources\CategoryResource;
+use App\Http\Resources\UserResource;
+use App\Http\Resources\ImageResource;
+use App\Http\Resources\TagResource;
 
 class PostResource extends JsonResource
 {
@@ -23,6 +27,11 @@ class PostResource extends JsonResource
             'author_id'     =>  $this->author_id,
             'category_id'   =>  $this->category_id,
             'meta_data'     =>  $this->meta_data,
+            'category'      =>  new CategoryResource($this->category),
+            'author'        =>  new UserResource($this->author),
+            'images'        =>  ImageResource::collection($this->images),
+            'tags'          =>  TagResource::collection($this->tags),
+            'comments'      =>  CommentResource::collection($this->comments)
         ];
         // return parent::toArray($request);
     }

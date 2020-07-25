@@ -27,7 +27,7 @@ class CategoriesMasterController extends Controller
     }
 
     // POST
-    public function store(Request request)
+    public function store(Request $request)
     {
     	// TODO : 
     }
