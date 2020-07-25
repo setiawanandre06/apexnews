@@ -8,12 +8,12 @@
 		<div class="form-group row mt-2">
 	    	<label for="category_title" class="col-md-2 col-form-label">Category Title</label>
 	    	<div class="col-md-10 row">
-	    		<input type="text" class="form-control" id="category_title" aria-describedby="emailHelp" placeholder="Enter category title" name="category_title" required/>
+	    		<input type="text" class="form-control" id="category_title" placeholder="Enter category title" name="category_title" required/>
 	    	</div>
 
 	    	<label for="category_color" class="col-md-2 col-form-label">Category Color</label>
 	    	<div class="col-md-10 row">
-	    		<input type="color" class="form-control" id="category_color" aria-describedby="emailHelp" placeholder="Enter category color" name="category_color" required/>
+	    		<input type="color" class="form-control" id="category_color" placeholder="Enter category color" name="category_color" required/>
 	    	</div>
 
 	    	<label for="" class="col-md-2 col-form-label"></label>

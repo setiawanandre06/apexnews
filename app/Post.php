@@ -41,6 +41,11 @@ class Post extends Model
     {
     	return $this->hasMany(Comment::class);
     }
+
+    public function link()
+    {
+        return '/posts/' . $this->id;
+    }
     // author_id & category_id ditaruh di fillable supaya jika ingin menghapus
     // current author_id, bisa di assign secara manual
 }

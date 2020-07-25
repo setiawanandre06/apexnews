@@ -28,15 +28,23 @@ use App\Http\Resources\CategoriesResource;
 
 Route::middleware(['auth'])->group( function(){  // Semua route akan dilindungi oleh authentication middleware
 
-	Route::post('categories', 'CategoryController@store')->name('save-category');
-	Route::get('categories', 'CategoryController@index');
+	Route::get('categories', 'CategoryController@index')->name('categories');
 	Route::get('categories/{id}', 'CategoryController@show');
+	Route::post('categories', 'CategoryController@store')->name('save-category');
 
-	Route::get('tags', 'TagController@index');
+	Route::get('tags', 'TagController@index')->name('tags');
 	Route::get('tags/{id}', 'TagController@show');
+	Route::post('tags', 'TagController@store')->name('save-tag');
 
-	Route::get('comments', 'CommentController@index');
+	Route::get('comments', 'CommentController@index')->name('comments');
 	Route::get('comments/{id}', 'CommentController@show');
+
+	Route::get('users', 'UserController@index')->name('users');
+
+	Route::get('posts', 'PostController@index')->name('posts');
+	Route::get('posts/{id}', 'PostController@show')->name('show-post');
+	Route::get('new-post', 'PostController@newPost')->name('new-post');
+	Route::post('new-post', 'PostController@store')->name('save-post');
 
 });
 

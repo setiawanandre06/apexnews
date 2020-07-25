@@ -34,5 +34,13 @@ class TagController extends Controller
     public function store(Request $request)
     {
     	// TODO : 
+        $request->validate([
+            'tag_title'    =>  'required',
+        ]);
+
+        $tag = new Tag();
+        $tag->title = $request->get('tag_title');
+        $tag->save();
+        return redirect()->back()->with('message', 'Tag Created');
     }
 }

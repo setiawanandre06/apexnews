@@ -11,9 +11,11 @@ class CommentController extends Controller
     public function index()
     {
     	// TODO : 
+        // author & post = fungsi untuk membuat relasi antara table comment dg table user & post
+        $comments = Comment::with(['author','post'])->paginate(20);
     	return view('comments.comments')->with(
     		[
-    			'comments'		=>	Comment::paginate(20)
+    			'comments'		=>	$comments
     		]
     	);
     }
